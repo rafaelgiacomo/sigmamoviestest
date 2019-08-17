@@ -1,21 +1,26 @@
-package br.com.rafael.sigmamoviesteste.detalhe_filme
+package br.com.rafael.sigmamoviesteste.movie_list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.paging.PagedList
 import br.com.rafael.sigmamoviesteste.data.repository.NetworkState
 import br.com.rafael.sigmamoviesteste.data.vo.MovieDetail
 import io.reactivex.disposables.CompositeDisposable
 
-class MovieDetailViewModel (private val movieDetailRepository: MovieDetailRepository, movieId: Int) : ViewModel() {
+class MovieListViewModel(private val movieRepository: MoviePagedListRepository) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
-    val movieDetail : LiveData<MovieDetail> by lazy {
-        movieDetailRepository.fetchMovieDetail(compositeDisposable, movieId)
+    val moviePagedList : LiveData<PagedList<MovieDetail>> by lazy {
+        movieRepository.fetchLiveMoviePagedList(compositeDisposable)
     }
 
     val networkState : LiveData<NetworkState> by lazy {
-        movieDetailRepository.fetchMovieDetailNetworkState()
+        movieRepository.getNetworkState()
+    }
+
+    fun listIsEmpty(): Boolean {
+        return moviePagedList.value?.isEmpty() ?: true
     }
 
     override fun onCleared() {

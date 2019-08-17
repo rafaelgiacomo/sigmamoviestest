@@ -11,9 +11,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="br.com.rafael.sigmamoviesteste.ui.MovieDetailActivity">
+        <activity
+                android:name=".ui.MovieTabbedListActivity"
+                android:label="@string/title_activity_movie_tabbed_list"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name="br.com.rafael.sigmamoviesteste.ui.MainActivity">
+        <activity android:name=".ui.MovieDetailActivity">
+        </activity>
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

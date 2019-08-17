@@ -12,10 +12,11 @@ import br.com.rafael.sigmamoviesteste.data.api.POSTER_BASE_URL
 import br.com.rafael.sigmamoviesteste.data.api.TheMovieDbClient
 import br.com.rafael.sigmamoviesteste.data.repository.NetworkState
 import br.com.rafael.sigmamoviesteste.data.vo.MovieDetail
-import br.com.rafael.sigmamoviesteste.detalhe_filme.MovieDetailRepository
-import br.com.rafael.sigmamoviesteste.detalhe_filme.MovieDetailViewModel
+import br.com.rafael.sigmamoviesteste.movie_detail.MovieDetailRepository
+import br.com.rafael.sigmamoviesteste.movie_detail.MovieDetailViewModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detalhe_filme.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MovieDetailActivity : AppCompatActivity() {
 
@@ -31,36 +32,36 @@ class MovieDetailActivity : AppCompatActivity() {
         val apiService = TheMovieDbClient.getClient()
         movieDetailRepository = MovieDetailRepository(apiService)
 
-        viewModel = getViewModel(movieId)
+        viewModel = getViewModel(movieId, "pt-BR")
 
         viewModel.movieDetail.observe(this, Observer {
             bindUI(it)
         })
 
         viewModel.networkState.observe(this, Observer {
-            progressBar.visibility = if(it == NetworkState.LOADING) View.VISIBLE else View.GONE
-            txtErro.visibility = if(it == NetworkState.ERROR) View.VISIBLE else View.GONE
+            pgb_movie_detail_progress.visibility = if(it == NetworkState.LOADING) View.VISIBLE else View.GONE
+            txt_movie_detail_error.visibility = if(it == NetworkState.ERROR) View.VISIBLE else View.GONE
         })
 
     }
 
     private fun bindUI(it: MovieDetail){
-        txtTitulo.text = it.title
-        txtSubTitulo.text = it.tagline
-        txtLancamento.text = it.releaseDate
-        txtNota.text = it.voteAverage.toString()
-        txtResumo.text = it.overview
+        txt_movie_detail_title.text = it.title
+        txt_movie_detail_tagline.text = it.tagline
+        txt_movie_detail_release_date.text = it.releaseDate
+        txt_movie_detail_vote.text = it.voteAverage.toString()
+        txt_movie_detail_overview.text = it.overview
 
         val moviePosterUrl = POSTER_BASE_URL + it.posterPath
         Glide.with(this)
             .load(moviePosterUrl)
-            .into(img_poster)
+            .into(img_movie_detail_poster)
     }
 
-    private fun getViewModel(movieId:Int): MovieDetailViewModel {
+    private fun getViewModel(movieId:Int, language:String): MovieDetailViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory{
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return MovieDetailViewModel(movieDetailRepository, movieId) as T
+                return MovieDetailViewModel(movieDetailRepository, movieId, language) as T
             }
         })[MovieDetailViewModel::class.java]
     }

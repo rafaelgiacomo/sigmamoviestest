@@ -13,14 +13,14 @@
             android:orientation="vertical">
 
         <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/pgb_movie_detail_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:visibility="gone"/>
 
         <TextView
-                android:id="@+id/txtErro"
+                android:id="@+id/txt_movie_detail_error"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -42,7 +42,7 @@
                 <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="500dp"
-                        android:id="@+id/img_poster"
+                        android:id="@+id/img_movie_detail_poster"
                         android:layout_gravity="center"
                         android:scaleType="matrix"
                         android:src="@drawable/ic_launcher_background"/>
@@ -53,7 +53,7 @@
                         android:orientation="vertical">
 
                     <TextView
-                            android:id="@+id/txtTitulo"
+                            android:id="@+id/txt_movie_detail_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
@@ -61,7 +61,7 @@
                             android:text="Título"/>
 
                     <TextView
-                            android:id="@+id/txtSubTitulo"
+                            android:id="@+id/txt_movie_detail_tagline"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
@@ -69,7 +69,7 @@
                             android:text="sub titulo"/>
 
                     <TextView
-                            android:id="@+id/txtInfo"
+                            android:id="@+id/txt_movie_detail_info"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
@@ -91,7 +91,7 @@
                                 android:text="Lançamento: "/>
 
                         <TextView
-                                android:id="@+id/txtLancamento"
+                                android:id="@+id/txt_movie_detail_release_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"
@@ -113,7 +113,7 @@
                                 android:text="Nota: "/>
 
                         <TextView
-                                android:id="@+id/txtNota"
+                                android:id="@+id/txt_movie_detail_vote"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"
@@ -128,7 +128,7 @@
                             android:paddingTop="5dp">
 
                         <TextView
-                                android:id="@+id/txtResumo"
+                                android:id="@+id/txt_movie_detail_overview"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"

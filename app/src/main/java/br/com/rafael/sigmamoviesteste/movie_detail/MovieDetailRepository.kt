@@ -1,4 +1,4 @@
-package br.com.rafael.sigmamoviesteste.detalhe_filme
+package br.com.rafael.sigmamoviesteste.movie_detail
 
 import androidx.lifecycle.LiveData
 import br.com.rafael.sigmamoviesteste.data.api.TheMovieDbInterface
@@ -11,9 +11,9 @@ class MovieDetailRepository(private val apiService : TheMovieDbInterface) {
 
     lateinit var movieDetailDataSource: MovieDetailDataSource
 
-    fun fetchMovieDetail(compositeDisposable: CompositeDisposable, movieId: Int) : LiveData<MovieDetail> {
+    fun fetchMovieDetail(compositeDisposable: CompositeDisposable, movieId: Int, language: String) : LiveData<MovieDetail> {
         movieDetailDataSource = MovieDetailDataSource(apiService, compositeDisposable)
-        movieDetailDataSource.fetchMovieDetail(movieId)
+        movieDetailDataSource.fetchMovieDetail(movieId, language)
 
         return movieDetailDataSource.downloadMovieDetail
     }

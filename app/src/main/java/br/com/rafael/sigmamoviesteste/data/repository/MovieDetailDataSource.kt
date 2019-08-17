@@ -22,12 +22,12 @@ class MovieDetailDataSource(
     val downloadMovieDetail: LiveData<MovieDetail>
         get() = _downloadDetalheFilmeResponse
 
-    fun fetchMovieDetail(movieId: Int) {
+    fun fetchMovieDetail(movieId: Int, language: String) {
         _networkState.postValue(NetworkState.LOADING)
 
         try {
             compositeDisposable.add(
-                apiService.getMovieDetail(movieId)
+                apiService.getMovieDetail(movieId, language)
                     .subscribeOn(Schedulers.io())
                     .subscribe(
                         {
