@@ -15,9 +15,8 @@ import br.com.rafael.sigmamoviesteste.movie_list.MovieListViewModel
 import br.com.rafael.sigmamoviesteste.movie_list.MoviePagedListAdapter
 import br.com.rafael.sigmamoviesteste.movie_list.MoviePagedListRepository
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.network_state_item.*
 
-class MainActivity : AppCompatActivity() {
+class MovieListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MovieListViewModel
     lateinit var movieRepository: MoviePagedListRepository
@@ -65,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     private fun getViewModel(): MovieListViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory{
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return MovieListViewModel(movieRepository) as T
+                return MovieListViewModel(movieRepository, "pt-BR", "popular") as T
             }
         })[MovieListViewModel::class.java]
     }

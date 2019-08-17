@@ -1,4 +1,4 @@
-package br.com.rafael.sigmamoviesteste.ui
+package br.com.rafael.sigmamoviesteste
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -8,7 +8,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import br.com.rafael.sigmamoviesteste.ui.ui.main.SectionsPagerAdapter
+import br.com.rafael.sigmamoviesteste.ui.main.SectionsPagerAdapter
 
 class MovieTabbedListActivity : AppCompatActivity() {
 

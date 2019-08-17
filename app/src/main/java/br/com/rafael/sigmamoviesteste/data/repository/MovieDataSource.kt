@@ -11,7 +11,9 @@ import io.reactivex.schedulers.Schedulers
 
 class MovieDataSource(
     private val apiService: TheMovieDbInterface,
-    private val compositeDisposable: CompositeDisposable
+    private val compositeDisposable: CompositeDisposable,
+    private val language: String,
+    private val category: String
 ) : PageKeyedDataSource<Int, MovieDetail>() {
 
     private var page = FIRST_PAGE
@@ -22,7 +24,7 @@ class MovieDataSource(
         networkState.postValue(NetworkState.LOADING)
 
         compositeDisposable.add(
-            apiService.getMoviesList("now_playing", page, "pt-BR")
+            apiService.getMoviesList(category, page, language)
                 .subscribeOn(Schedulers.io())
                 .subscribe(
                     {
@@ -39,7 +41,7 @@ class MovieDataSource(
         networkState.postValue(NetworkState.LOADING)
 
         compositeDisposable.add(
-            apiService.getMoviesList("now_playing", params.key, "pt-BR")
+            apiService.getMoviesList(category, params.key, language)
                 .subscribeOn(Schedulers.io())
                 .subscribe(
                     {

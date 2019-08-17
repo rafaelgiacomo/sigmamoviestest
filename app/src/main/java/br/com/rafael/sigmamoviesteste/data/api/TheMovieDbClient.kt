@@ -8,6 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 const val API_KEY = "28e43a9c27c3f37848c5ceff3bca0ef8"
+const val LANGUAGE = "pt-BR"
 const val BASE_URL = "https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 const val FIRST_PAGE = 1
