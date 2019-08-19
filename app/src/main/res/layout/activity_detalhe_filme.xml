@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Problema de conexão"
+                android:text="@string/connection_error"
                 android:visibility="gone"/>
 
         <ScrollView
@@ -58,7 +58,7 @@
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:textSize="18dp"
-                            android:text="Título"/>
+                            android:text="@string/title"/>
 
                     <TextView
                             android:id="@+id/txt_movie_detail_tagline"
@@ -66,7 +66,7 @@
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:textSize="14dp"
-                            android:text="sub titulo"/>
+                            android:text="@string/tag_line"/>
 
                     <TextView
                             android:id="@+id/txt_movie_detail_info"
@@ -75,7 +75,7 @@
                             android:textStyle="bold"
                             android:layout_marginTop="15dp"
                             android:textSize="14sp"
-                            android:text="Informação do filme"/>
+                            android:text="@string/movie_info"/>
 
                     <LinearLayout
                             android:layout_width="match_parent"
@@ -88,7 +88,7 @@
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
                                 android:textSize="12sp"
-                                android:text="Lançamento: "/>
+                                android:text="@string/release_date"/>
 
                         <TextView
                                 android:id="@+id/txt_movie_detail_release_date"
@@ -110,7 +110,7 @@
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
                                 android:textSize="12sp"
-                                android:text="Nota: "/>
+                                android:text="@string/grade"/>
 
                         <TextView
                                 android:id="@+id/txt_movie_detail_vote"
@@ -132,7 +132,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"
-                                android:text="Resumo"/>
+                                android:text="@string/resumo"
+                                android:layout_marginBottom="30dp"/>
 
                     </LinearLayout>
 

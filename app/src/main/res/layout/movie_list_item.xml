@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginStart="4dp"
-                android:text="filme"
+                android:text="@string/movie"
                 android:textSize="12sp"
                 android:maxLines="1"
                 android:ellipsize="end"/>
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginStart="4dp"
-                android:text="2019"
+                android:text="@string/year"
                 android:textSize="12sp"
                 android:maxLength="4"/>
 

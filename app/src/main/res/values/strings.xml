@@ -1,7 +1,17 @@
 <resources>
-    <string name="app_name">SigmaMoviesTeste</string>
-    <string name="title_activity_movie_tabbed_list">MovieTabbedListActivity</string>
+    <string name="app_name">Sigma Movies Test</string>
+    <string name="title_activity_movie_tabbed_list">Sigma Movies Test</string>
     <string name="tab_text_1">Em Cartaz</string>
     <string name="tab_text_2">Populares</string>
     <string name="tab_text_3">Bem Avaliados</string>
+    <string name="resumo">Resumo</string>
+    <string name="grade">Nota:</string>
+    <string name="release_date">Lançamento:</string>
+    <string name="movie_info">Informação do filme</string>
+    <string name="tag_line">sub titulo</string>
+    <string name="title">Título</string>
+    <string name="connection_error">Problema de conexão</string>
+    <string name="movie">filme</string>
+    <string name="year">2019</string>
+    <string name="error_message">Mensagem de erro</string>
 </resources>
